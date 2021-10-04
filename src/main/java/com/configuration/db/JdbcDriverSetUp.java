@@ -55,6 +55,23 @@ public class JdbcDriverSetUp {
         try {
             String query = "SELECT * FROM user INNER JOIN scientist;";
             resultSet = statement.executeQuery(query);
+            Assertions.assertEquals("test_user3\ttest_user3@mail.com\t12345678\t2021-09-08 21:07:36\t1\talbert\teinstein\n"
+                                    + "test_user2\ttest_user2@mail.com\t1234567\t2021-09-08 21:07:19\t1\talbert\teinstein\n"
+                                    + "test_user1\ttest_user1@mail.com\t123456\t2021-09-08 21:06:51\t1\talbert\teinstein\n"
+                                    + "test_user3\ttest_user3@mail.com\t12345678\t2021-09-08 21:07:36\t2\tisaac\tnewton\n"
+                                    + "test_user2\ttest_user2@mail.com\t1234567\t2021-09-08 21:07:19\t2\tisaac\tnewton\n"
+                                    + "test_user1\ttest_user1@mail.com\t123456\t2021-09-08 21:06:51\t2\tisaac\tnewton\n"
+                                    + "test_user3\ttest_user3@mail.com\t12345678\t2021-09-08 21:07:36\t3\tmarie\tcurie\n"
+                                    + "test_user2\ttest_user2@mail.com\t1234567\t2021-09-08 21:07:19\t3\tmarie\tcurie\n"
+                                    + "test_user1\ttest_user1@mail.com\t123456\t2021-09-08 21:06:51\t3\tmarie\tcurie", "test_user3\ttest_user3@mail.com\t12345678\t2021-09-08 21:07:36\t1\talbert\teinstein\n"
+                                                                                                                       + "test_user2\ttest_user2@mail.com\t1234567\t2021-09-08 21:07:19\t1\talbert\teinstein\n"
+                                                                                                                       + "test_user1\ttest_user1@mail.com\t123456\t2021-09-08 21:06:51\t1\talbert\teinstein\n"
+                                                                                                                       + "test_user3\ttest_user3@mail.com\t12345678\t2021-09-08 21:07:36\t2\tisaac\tnewton\n"
+                                                                                                                       + "test_user2\ttest_user2@mail.com\t1234567\t2021-09-08 21:07:19\t2\tisaac\tnewton\n"
+                                                                                                                       + "test_user1\ttest_user1@mail.com\t123456\t2021-09-08 21:06:51\t2\tisaac\tnewton\n"
+                                                                                                                       + "test_user3\ttest_user3@mail.com\t12345678\t2021-09-08 21:07:36\t3\tmarie\tcurie\n"
+                                                                                                                       + "test_user2\ttest_user2@mail.com\t1234567\t2021-09-08 21:07:19\t3\tmarie\tcurie\n"
+                                                                                                                       + "test_user1\ttest_user1@mail.com\t123456\t2021-09-08 21:06:51\t3\tmarie\tcurie", "Select is not match");
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("firstname"));
             }

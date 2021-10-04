@@ -9,11 +9,7 @@ public class DBTests {
 
     @Test
     public void selectFromDataBse() {
-        try {
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
 }
